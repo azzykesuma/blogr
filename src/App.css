@@ -1,38 +1,222 @@
-.App {
+* {
+  margin : 0;
+  padding : 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.MainContainer {
+  display : flex;
+  flex-direction: column;
+}
+
+.headerContainer {
+  background-image: url('./images/bg-pattern-intro.svg');
+  height : 700px;
+  width : 100%;
+  background-size:cover;
+  background-color: hsl(353, 100%, 62%);
+  background-repeat: no-repeat;
+  border-radius : 0 0 0 80px;
+}
+
+.header {
+  display : flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-inline : 40px;
+  margin-block : 60px 170px;
+}
+
+.header > img {
+  cursor: pointer;
+}
+
+.heroTittle {
+  text-align: center;
+  margin-inline : 20px;
+}
+
+h1 {
+  color : #fff;
+  font-family: 'Overpass',sans-serif;
+  font-size: 30px;
+  margin-bottom : 30px;
+}
+
+p {
+  color : #fff;
+  font-family: 'Ubuntu';
+  font-size: 20px;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.primary {
+  margin-top : 90px;
+  padding : 20px;
+  border-radius: 50px;
+  border : none;
+  font-family: 'Ubuntu',sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color :  hsl(356, 100%, 66%);
+  transition : 0.3s ease-in-out;
+  margin-right : 30px;
+}
+
+.primary:hover{
+  background-color: hsl(355, 100%, 74%);
+  cursor: pointer;
+  color : #fff;
+}
+
+.regular {
+  margin-top : 90px;
+  padding : 20px 30px;
+  border-radius: 50px;
+  border : 1px solid #fff;
+  font-family: 'Ubuntu',sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  background-color: transparent;
+  color : #fff;
+  transition: 0.3s ease-in-out;
+}
+
+.regular:hover{
+  background-color: #fff;
+  cursor: pointer;
+  color : hsl(356, 100%, 66%);
+}
+
+.card {
+  display : flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h2 {
+  font-family: 'Ubuntu';
+  color : hsl(208, 49%, 24%);
+  font-size : 30px;
+  font-weight: 400;
+  margin-top: 100px;
+}
+
+.middleCard {
+  display : flex;
+  flex-direction: column;
+}
+
+.imageCard {
+  background-image: url('./images/illustration-editor-mobile.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  height : 400px;
+  width : 400px;
+}
+
+.cardDesc {
+  margin-top : -140px;
+  text-align: center;
+  margin-inline : 50px;
+}
+
+.cardDesc > p {
+  margin-top: 30px;
+  color : hsl(207, 13%, 34%);
+  line-height: 1.5em;
+}
+
+.middleSection {
+  display : flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mobile {
+  width : 350px;
+  margin-top : -90px;
+  position: relative;
+  top : 13em;
+}
+
+.midBackground {
+  background-image: url('./images/bg-pattern-circles.svg');
+  width : 100%;
+  background-color: hsl(237, 17%, 21%);
+  height : 600px;
+  border-radius: 0 120px 0 120px;
+  background-position: center top;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.midBackground > h1 {
+  display : block;
+  margin-top: 7em;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.midBackground > p {
+  display : block;
+  text-align: center;
+  margin-inline : 30px;
+  line-height: 1.5em;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.cardBottom {
+  margin-top: 50px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.imageCardBottom {
+  background-image: url('./images/illustration-laptop-mobile.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  height : 400px;
+  width : 400px;
+}
+
+footer {
+  margin-top: 100px;
+  background-color: hsl(240, 10%, 16%);
+  border-radius: 0 120px 0 0;
+  color : #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding-block: 80px;
 }
 
-.App-link {
-  color: #61dafb;
+footer > img {
+  margin-bottom: 30px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.footerContainer {
+  display : flex;
+  flex-direction: column;
+}
+
+.footerCard > p {
+  font-family: 'Ubuntu';
+  font-size: 20px;
+  margin-block: 30px;
+}
+.footerCard > ul > li {
+  list-style: none;
+  line-height: 1.5em;
+  transition: 0.3s ease-in-out;
+}
+
+.footerCard > ul > li:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
