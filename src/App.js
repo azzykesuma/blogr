@@ -4,20 +4,98 @@ import logo from './images/logo.svg'
 import hamburger from './images/icon-hamburger.svg'
 import mobile from './images/illustration-phones.svg'
 import MobileTab from './component/MobileTab';
+import arrow from './images/icon-arrow-dark.svg'
+import arrowUp from './images/icon-arrow-light.svg'
 
 function App() {
   const [clicked,setClicked] = useState(false)
+  const [ClickProduct,setClickProduct] = useState(false)
+  const [ClickCompany,setClickCompany] = useState(false)
+  const [ClickConnect,setClickConnect] = useState(false)
 
   const handleClick = () => {
     setClicked(!clicked)
   }
+
+  const handleClickProduct = () => {
+    setClickProduct(!ClickProduct)
+  }
+
+  const handleClickCompany = () => {
+    setClickCompany(!ClickCompany)
+  }
+
+  const handleClickConnect = () => {
+    setClickConnect(!ClickConnect)
+  }
+
   return (
     <div className='MainContainer'>
       <div className='headerContainer'>
         <div className='header'>
-          <img src={logo} alt='logo' />
-          <img src={hamburger} alt='hamburger' onClick={handleClick}/>
-          
+          <div className='firstSection'>
+            <img src={logo} alt='logo' />
+            <img className='hamburger' src={hamburger} alt='hamburger' onClick={handleClick}/>
+            
+            {/* desktop Navigation Bar */}
+            
+            <div className='DesktopNav'>
+              <ul>
+              <div className='listItem'>
+                <li>Product {ClickProduct  ? 
+                <img src={arrow} alt='arrow-down' className='arrowDown' onClick={handleClickProduct}/> 
+                :<img src={arrowUp} alt='arrow-up' onClick={handleClickProduct} />}</li>
+                  {ClickProduct ? (
+                    <div className='navBox'>
+                      <ul>
+                        <li>Overview</li>
+                        <li>Pricing</li>
+                        <li>Marketplace</li>
+                        <li>Feature</li>
+                        <li>Integrations</li>
+                      </ul>
+                    </div>
+                  ) : null}
+                </div>
+
+                <div className='listItem'>
+                <li>Company {ClickCompany  ? 
+                <img src={arrow} alt='arrow-down' className='arrowDown' onClick={handleClickCompany}/> 
+                :<img src={arrowUp} alt='arrow-up' onClick={handleClickCompany} />}</li>
+                  {ClickCompany ? (
+                    <div className='navBox'>
+                      <ul>
+                        <li>About</li>
+                        <li>Team</li>
+                        <li>Blog</li>
+                        <li>Career</li>
+                      </ul>
+                    </div>
+                  ) : null}
+                </div>
+
+                <div className='listItem'>
+                <li>Connect {ClickConnect  ? 
+                <img src={arrow} alt='arrow-down' className='arrowDown' onClick={handleClickConnect}/> 
+                :<img src={arrowUp} alt='arrow-up' onClick={handleClickConnect} />}</li>
+                  {ClickConnect ? (
+                    <div className='navBox'>
+                      <ul>
+                        <li>Contact</li>
+                        <li>Newsletter</li>
+                        <li>Blog</li>
+                        <li>LinkedIn</li>
+                      </ul>
+                    </div>
+                  ) : null}
+                </div>
+              </ul>
+            </div>
+          </div>
+          <div className='secondSection'>
+              <button className='Login'>Login</button>
+              <button className='SignUp'>Sign Up</button>
+          </div>
         </div>
         {clicked ? <MobileTab /> : null}
         {
@@ -37,8 +115,8 @@ function App() {
         </div>
           )
         }
-        
       </div>
+        {/* body section */}
 
       <div className='card'>
         <h2>Designed for the future</h2>
@@ -62,18 +140,21 @@ function App() {
       </div>
 
       <div className='middleSection'>
-        <img className='mobile' src={mobile} alt='mobile-phone' />
+        {/* <img className='mobile' src={mobile} alt='mobile-phone' /> */}
         <div className='midBackground'>
-          <h1>State of the Art Infrastructure</h1>
-          <p>
-            With reliability and speed in mind, worldwide data centers provide the backbone for ultra-fast connectivity. 
-            This ensures your site will load instantly, no matter where your readers are, keeping your site competitive.
-          </p>
+          <img className='mobile' src={mobile} alt='mobile-phone' />
+          <div className='midDesc'>
+            <h1>State of the Art Infrastructure</h1>
+              <p>
+                With reliability and speed in mind, worldwide data centers provide the backbone for ultra-fast connectivity. 
+                This ensures your site will load instantly, no matter where your readers are, keeping your site competitive.
+              </p>
+          </div>
         </div>
       </div>
       
       <div className='cardBottom'>
-        <div className='middleCard'>
+        <div className='middleCardBottom'>
           <div className='imageCardBottom'></div>
           <div className='cardDesc'>
             <h2>Free, open, simple</h2>
@@ -92,8 +173,8 @@ function App() {
       </div>
 
       <footer>
-        <img src={logo} alt='logo' />
-        <div className='footerContainer'>
+      <img src={logo} alt='logo' />
+
           <div className='footerCard'>
             <p>Product</p>
             <ul>
@@ -114,7 +195,6 @@ function App() {
               <li>Careers</li>
             </ul>
           </div>
-        </div>
 
           <div className='footerCard'>
             <p>Connect</p>
@@ -125,6 +205,8 @@ function App() {
               <li>LinkedIn</li>
             </ul>
           </div>
+
+         
       </footer>
     </div>
   );
