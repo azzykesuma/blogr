@@ -241,7 +241,7 @@ footer > img {
   cursor: pointer;
 }
 
-@media screen and (min-width : 1475px) {
+@media screen and (min-width : 1400px) {
   .header {
     display : flex;
     align-items: center;
